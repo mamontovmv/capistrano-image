@@ -21,5 +21,7 @@ RUN apk add --no-cache --virtual .build-deps \
     json \
     && apk del --no-cache .build-deps
 
+RUN apt-get -y install openssl
+
 COPY entrypoint.sh /usr/local/bin/entrypoint.sh
 ENTRYPOINT ["/usr/local/bin/entrypoint.sh"]
