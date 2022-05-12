@@ -12,6 +12,7 @@ RUN apk add --no-cache --virtual .build-deps \
     ruby-bundler \
     rsync \
     openssh \
+    openssl \
     && gem install capistrano:3.10.0 \
     capistrano-composer \
     capistrano-file-permissions \
@@ -20,8 +21,6 @@ RUN apk add --no-cache --virtual .build-deps \
     capistrano-laravel:1.2.1 \
     json \
     && apk del --no-cache .build-deps
-
-RUN apt-get -y install openssl
 
 COPY entrypoint.sh /usr/local/bin/entrypoint.sh
 ENTRYPOINT ["/usr/local/bin/entrypoint.sh"]
