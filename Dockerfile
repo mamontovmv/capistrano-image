@@ -13,6 +13,7 @@ RUN apk add --no-cache --virtual .build-deps \
     rsync \
     openssh \
     openssl \
+    git \
     && gem install capistrano:3.10.0 \
     capistrano-composer \
     capistrano-file-permissions \
